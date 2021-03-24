@@ -1,5 +1,5 @@
 {% set name = "libstempo" %}
-{% set version = "2.3.5" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b3b6ed668b04c7ea445a4594e1366f97458da051adda25f1718b3f29cb0ca470
+  sha256: d0e2bf985ac63028d4333c1389c014fad28f0d9b6eb9c9fced3e93deab962718
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,14 +24,15 @@ requirements:
     - pip
     - python
     - setuptools
-    - tempo2
+    - tempo2 >=2020.11.1
   run:
-    - astropy
+    - astropy >=4.1
     - cython >=0.22
-    - numpy
+    - matplotlib-base
+    - {{ pin_compatible('numpy') }}
     - python
     - scipy
-    - tempo2
+    - tempo2 >=2020.11.1
 
 test:
   imports:
