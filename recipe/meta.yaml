@@ -26,9 +26,9 @@ requirements:
     - setuptools
     - tempo2 >=2020.11.1
   run:
-    - astropy
+    - astropy >=4.1
     - cython >=0.22
-    - matplotlib
+    - matplotlib-base
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
