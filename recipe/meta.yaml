@@ -24,14 +24,15 @@ requirements:
     - pip
     - python
     - setuptools
-    - tempo2
+    - tempo2 >=2020.11.1
   run:
     - astropy
     - cython >=0.22
-    - numpy
+    - matplotlib
+    - {{ pin_compatible('numpy') }}
     - python
     - scipy
-    - tempo2
+    - tempo2 >=2020.11.1
 
 test:
   imports:
