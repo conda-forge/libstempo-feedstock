@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - cython >=0.22
+    - cython
     - numpy
     - pip
     - python
@@ -30,11 +30,11 @@ requirements:
     - tempo2 >=2020.11.1
   run:
     - astropy >=4.1
-    - cython >=0.22
     - ephem >=3.7.7.1
     - matplotlib-base
     - {{ pin_compatible('numpy') }}
     - python
+    - pyerfa
     - scipy
     - tempo2 >=2020.11.1
 
