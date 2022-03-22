@@ -11,8 +11,8 @@ source:
   patches:
     # add in tests directory
     - add_tests.patch
-    # rename tests to test
-    - rename_tests.patch
+    # include tests directory in MANIFEST.in
+    - include_tests.patch
 
 build:
   number: 1
@@ -44,10 +44,10 @@ test:
   requires:
     - pytest
   source_files:
-    - test
+    - tests
   commands:
     # run units tests
-    - python -m pytest test -v -ra
+    - python -m pytest tests -v -ra
 
 about:
   home: http://vallis.github.io/libstempo/
