@@ -46,7 +46,7 @@ test:
     - test_pulsar.py
   commands:
     # run units tests
-    - python -m pytest test -v -ra
+    - python -m pytest test*.py -v -ra
 
 about:
   home: http://vallis.github.io/libstempo/
