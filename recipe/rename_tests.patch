@@ -1,0 +1,12 @@
+diff --git a/tests/test_fakepulsar.py b/test/test_fakepulsar.py
+similarity index 100%
+rename from tests/test_fakepulsar.py
+rename to test/test_fakepulsar.py
+diff --git a/tests/test_imports.py b/test/test_imports.py
+similarity index 100%
+rename from tests/test_imports.py
+rename to test/test_imports.py
+diff --git a/tests/test_pulsar.py b/test/test_pulsar.py
+similarity index 100%
+rename from tests/test_pulsar.py
+rename to test/test_pulsar.py
