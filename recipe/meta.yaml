@@ -10,7 +10,7 @@ source:
   sha256: 539dd18051c3ac120e0de0bb79a6ce7c41912cca453229f40169eb75aa8632e1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -36,8 +36,13 @@ requirements:
     - tempo2 >=2020.11.1
 
 test:
-  imports:
-    - libstempo
+  requires:
+    - pytest
+  source_files:
+    - tests
+  commands:
+    # run units tests
+    - python -m pytest tests -v -ra
 
 about:
   home: http://vallis.github.io/libstempo/
