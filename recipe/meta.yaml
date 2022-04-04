@@ -11,9 +11,10 @@ source:
   patches:
     - oldest-supported-numpy.patch
     - collections-abs.patch
+    - cythonrequirement.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
