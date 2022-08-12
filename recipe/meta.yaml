@@ -1,5 +1,5 @@
 {% set name = "libstempo" %}
-{% set version = "2.4.4" %}
+{% set version = "2.4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 539dd18051c3ac120e0de0bb79a6ce7c41912cca453229f40169eb75aa8632e1
+  sha256: 717f3f0e800aea5fe2730fda5915671963fd719efabf97bc581a72ee160cc0c6
   patches:
     - oldest-supported-numpy.patch
     - collections-abs.patch
     - cythonrequirement.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
