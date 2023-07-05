@@ -209,35 +209,35 @@ class TestFakePulsar(unittest.TestCase):
         self.assertTrue(np.all(self.fakepsrtp.residuals() == self.fakepsr.residuals()))
         self.assertTrue(np.all(self.fakepsrtp.phaseresiduals() == self.fakepsr.phaseresiduals()))
 
-    #def test_write_tim(self):
-    #    """
-    #    Test writing out the .tim file and then reading it back in.
-    #    """
+    def test_write_tim(self):
+        """
+        Test writing out the .tim file and then reading it back in.
+        """
 
-    #    self.fakepsr.savetim(str(TMP_DIR / "fakepsr.tim"))
-    #    self.fakepsrtp.savetim(str(TMP_DIR / "fakepsrtp.tim"))
+        self.fakepsr.savetim(str(TMP_DIR / "fakepsr.tim"))
+        self.fakepsrtp.savetim(str(TMP_DIR / "fakepsrtp.tim"))
 
-    #    self.assertTrue((TMP_DIR / "fakepsr.tim").exists())
-    #    self.assertTrue((TMP_DIR / "fakepsrtp.tim").exists())
+        self.assertTrue((TMP_DIR / "fakepsr.tim").exists())
+        self.assertTrue((TMP_DIR / "fakepsrtp.tim").exists())
 
-    #    t2.purgetim(str(TMP_DIR / "fakepsr.tim"))
-    #    t2.purgetim(str(TMP_DIR / "fakepsrtp.tim"))
+        t2.purgetim(str(TMP_DIR / "fakepsr.tim"))
+        t2.purgetim(str(TMP_DIR / "fakepsrtp.tim"))
 
-    #    newfakepsr = t2.tempopulsar(parfile=self.parfile, timfile=str(TMP_DIR / "fakepsr.tim"), dofit=False)
-    #    newfakepsrtp = t2.tempopulsar(parfile=self.parfile, timfile=str(TMP_DIR / "fakepsrtp.tim"), dofit=False)
+        newfakepsr = t2.tempopulsar(parfile=self.parfile, timfile=str(TMP_DIR / "fakepsr.tim"), dofit=False)
+        newfakepsrtp = t2.tempopulsar(parfile=self.parfile, timfile=str(TMP_DIR / "fakepsrtp.tim"), dofit=False)
 
-    #    self.assertEqual(newfakepsrtp.nobs, len(self.obstimes))
-    #    self.assertEqual(newfakepsrtp.nobs, newfakepsr.nobs)
-    #    self.assertEqual(newfakepsrtp.name, "1909-3744")
-    #    self.assertEqual(newfakepsr.name, "1909-3744")
+        self.assertEqual(newfakepsrtp.nobs, len(self.obstimes))
+        self.assertEqual(newfakepsrtp.nobs, newfakepsr.nobs)
+        self.assertEqual(newfakepsrtp.name, "1909-3744")
+        self.assertEqual(newfakepsr.name, "1909-3744")
 
-    #    self.assertTrue(np.all(newfakepsrtp.stoas == self.obstimes))
-    #    self.assertTrue(np.all(newfakepsrtp.stoas == self.fakepsrtp.stoas))
-    #    self.assertTrue(np.all(newfakepsrtp.toas() == self.fakepsrtp.toas()))
-    #    self.assertTrue(np.all(newfakepsr.stoas == self.fakepsrtp.stoas))
-    #    self.assertTrue(np.all(newfakepsr.toas() == newfakepsrtp.toas()))
+        self.assertTrue(np.all(newfakepsrtp.stoas == self.obstimes))
+        self.assertTrue(np.all(newfakepsrtp.stoas == self.fakepsrtp.stoas))
+        self.assertTrue(np.all(newfakepsrtp.toas() == self.fakepsrtp.toas()))
+        self.assertTrue(np.all(newfakepsr.stoas == self.fakepsrtp.stoas))
+        self.assertTrue(np.all(newfakepsr.toas() == newfakepsrtp.toas()))
 
-    #    # check residuals are the same
-    #    self.assertTrue(np.all(newfakepsrtp.residuals() == self.fakepsrtp.residuals()))
-    #    self.assertTrue(np.all(newfakepsrtp.phaseresiduals() == self.fakepsrtp.phaseresiduals()))
-    #    self.assertTrue(np.all(newfakepsrtp.residuals() == newfakepsr.residuals()))
+        # check residuals are the same
+        self.assertTrue(np.all(newfakepsrtp.residuals() == self.fakepsrtp.residuals()))
+        self.assertTrue(np.all(newfakepsrtp.phaseresiduals() == self.fakepsrtp.phaseresiduals()))
+        self.assertTrue(np.all(newfakepsrtp.residuals() == newfakepsr.residuals()))
