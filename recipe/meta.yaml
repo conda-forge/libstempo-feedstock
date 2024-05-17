@@ -12,7 +12,7 @@ source:
     - distutils.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -32,7 +32,6 @@ requirements:
     - astropy >=4.1
     - ephem >=3.7.7.1
     - matplotlib-base
-    - {{ pin_compatible('numpy') }}
     - python
     - pyerfa
     - scipy
