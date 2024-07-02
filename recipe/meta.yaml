@@ -1,5 +1,5 @@
 {% set name = "libstempo" %}
-{% set version = "2.4.6" %}
+{% set version = "2.4.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8fabb22b466f1b14d52293fb34f819c8238d21f8fbb4c1455aae7808b34ea2af
+  sha256: cfaf2ea3bbd553ee5876233505c2494ce09cd47f84503ac75836ced576fd7619
   patches:
-    - distutils.patch
+   #- distutils.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
