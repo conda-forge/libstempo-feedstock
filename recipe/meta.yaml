@@ -9,7 +9,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: cfaf2ea3bbd553ee5876233505c2494ce09cd47f84503ac75836ced576fd7619
   patches:
-   #- distutils.patch
+    - numpyversion.patch
 
 build:
   number: 0
