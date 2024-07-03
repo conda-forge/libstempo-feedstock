@@ -1,8 +1,41 @@
 diff --git a/setup.py b/setup.py
-index 8677944..79d32d2 100644
+index 8677944..3dbba4d 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -100,8 +100,8 @@ setup(
+@@ -5,7 +5,6 @@ import warnings
+ from pathlib import Path
+
+ import numpy
+-from Cython.Build import cythonize
+ from setuptools import Extension, setup
+
+
+@@ -66,6 +65,24 @@ if platform.system() == "Linux":
+ else:
+     linkArgs = []
+
++
++ext_modules = [
++    Extension(
++        "libstempo.libstempo",
++        ["libstempo/libstempo.pyx"],
++        language="c++",
++        include_dirs=[TEMPO2 + "/include", numpy.get_include()],
++        libraries=["tempo2", "tempo2pred"],
++        library_dirs=[TEMPO2 + "/lib"],
++        extra_compile_args=["-Wno-unused-function"],
++        extra_link_args=linkArgs,
++    ]
++)
++
++for e in ext_modules:
++    e.cython_directives = {"language_level": "3"}
++
++
+ setup(
+     name="libstempo",
+     version="2.4.7",  # remember to change it in __init__.py
+@@ -100,20 +117,9 @@ setup(
          "libstempo.spharmORFbasis",
          "libstempo.eccUtils",
      ],
@@ -12,5 +45,17 @@ index 8677944..79d32d2 100644
 +    install_requires=["numpy>=1.15.0", "scipy>=1.2.0", "matplotlib>=3.3.2", "ephem>=3.7.7.1"],
      extras_require={"astropy": ["astropy>=4.1"]},
      python_requires=">=3.7",
-     ext_modules=cythonize(
-
+-    ext_modules=cythonize(
+-        Extension(
+-            "libstempo.libstempo",
+-            ["libstempo/libstempo.pyx"],
+-            language="c++",
+-            include_dirs=[TEMPO2 + "/include", numpy.get_include()],
+-            libraries=["tempo2", "tempo2pred"],
+-            library_dirs=[TEMPO2 + "/lib"],
+-            extra_compile_args=["-Wno-unused-function"],
+-            extra_link_args=linkArgs,
+-        )
+-    ),
++    ext_modules=ext_modules,
+ )
