@@ -25,8 +25,8 @@ index 8677944..3dbba4d 100644
 +        library_dirs=[TEMPO2 + "/lib"],
 +        extra_compile_args=["-Wno-unused-function"],
 +        extra_link_args=linkArgs,
-+    ]
-+)
++    )
++]
 +
 +for e in ext_modules:
 +    e.cython_directives = {"language_level": "3"}
