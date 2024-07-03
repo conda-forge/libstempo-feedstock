@@ -11,6 +11,7 @@ source:
   patches:
     - numpyversion.patch
     - pyprojecttoml.patch
+    - importarray.patch
 
 build:
   number: 0

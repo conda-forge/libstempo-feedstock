@@ -1,0 +1,13 @@
+diff --git a/libstempo/libstempo.pyx b/libstempo/libstempo.pyx
+index bb7ae99..4e8a951 100644
+--- a/libstempo/libstempo.pyx
++++ b/libstempo/libstempo.pyx
+@@ -37,6 +37,8 @@ from cython cimport view
+ import numpy
+ cimport numpy
+
++numpy.import_array()
++
+ import scipy.linalg
+
+ try:
