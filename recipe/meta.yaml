@@ -35,7 +35,7 @@ requirements:
     - astropy >=4.1
     - ephem >=3.7.7.1
     - matplotlib-base
-    - numpy
+    - numpy <2
     - python
     - pyerfa
     - scipy
