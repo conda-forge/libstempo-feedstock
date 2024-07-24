@@ -1,5 +1,5 @@
 {% set name = "libstempo" %}
-{% set version = "2.4.7" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cfaf2ea3bbd553ee5876233505c2494ce09cd47f84503ac75836ced576fd7619
-  patches:
-    - numpyversion.patch
-    - pyprojecttoml.patch
-    - importarray.patch
+  sha256: 3e7621c48247a50cde0f826023bee9c251276fe9f932c75a3cb28fff38b64f58
 
 build:
   number: 0
