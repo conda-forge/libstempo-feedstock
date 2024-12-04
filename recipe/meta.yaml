@@ -10,7 +10,7 @@ source:
   sha256: 3e7621c48247a50cde0f826023bee9c251276fe9f932c75a3cb28fff38b64f58
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -31,7 +31,7 @@ requirements:
     - setuptools
     - tempo2 >=2020.11.1
   run:
-    - astropy >=4.1
+    - astropy-base >=4.1
     - ephem >=3.7.7.1
     - matplotlib-base
     - numpy
