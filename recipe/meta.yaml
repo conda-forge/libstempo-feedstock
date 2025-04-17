@@ -10,7 +10,7 @@ source:
   sha256: b8fa0329f2797283c7895e7dd0fe424a977f2d255e9c95cc9b20261ecc790810
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -23,13 +23,14 @@ requirements:
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - cython                              # [build_platform != target_platform]
     - numpy                               # [build_platform != target_platform]
+    - tempo2                              # [build_platform != target_platform]
   host:
     - cython
     - numpy
     - pip
     - python
     - setuptools
-    - tempo2 >=2020.11.1
+    - tempo2 >=2024.04.1
   run:
     - astropy-base >=4.1
     - ephem >=3.7.7.1
@@ -38,7 +39,7 @@ requirements:
     - python
     - pyerfa
     - scipy
-    - tempo2 >=2020.11.1
+    - tempo2 >=2024.04.1
 
 test:
   imports:
